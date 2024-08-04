@@ -27,7 +27,8 @@ class CarWashStation:
                 * (self.average_rating / self.distance_from_city_center))
 
     def wash_single_car(self, car: Car) -> None:
-        car.clean_mark = self.clean_power
+        if car.clean_mark < self.clean_power:
+            car.clean_mark = self.clean_power
 
     def rate_service(self, rate: int) -> None:
         self.average_rating = round(
